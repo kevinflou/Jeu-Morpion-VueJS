@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>Jeu du Morpion</title>
+  <meta charset="utf-8"/>
+  <!-- Including VueJS Script -->
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <div class="app-page">
+  <section class="container page">
+
+    <p id="joueur">C'est au tour du joueur {{ joueur }}</p>
+      <div class="table-wrap">
+      <table class="table" border=1>
+    <tbody><tr>
+      <th v-on:click="ajouter(1)" class="case-jeu"><img v-if="case1 == 1" src="cross.png"> <img v-if="case1 == 2" src="circle.png"></th>
+      <th v-on:click="ajouter(2)" class="case-jeu"><img v-if="case2 == 1" src="cross.png"> <img v-if="case2 == 2" src="circle.png"></th>
+      <th v-on:click="ajouter(3)" class="case-jeu"><img v-if="case3 == 1" src="cross.png"> <img v-if="case3 == 2" src="circle.png"></th>
+    </tr>
+    <tr>
+      <td v-on:click="ajouter(4)" class="case-jeu"><img v-if="case4 == 1" src="cross.png"> <img v-if="case4 == 2" src="circle.png"></td>
+      <td v-on:click="ajouter(5)" class="case-jeu"><img v-if="case5 == 1" src="cross.png"> <img v-if="case5 == 2" src="circle.png"></td>
+      <td v-on:click="ajouter(6)" class="case-jeu"><img v-if="case6 == 1" src="cross.png"> <img v-if="case6 == 2" src="circle.png"></td>
+    </tr>
+    <tr>
+      <td v-on:click="ajouter(7)" class="case-jeu"><img v-if="case7 == 1" src="cross.png"> <img v-if="case7 == 2" src="circle.png"></td>
+      <td v-on:click="ajouter(8)" class="case-jeu"><img v-if="case8 == 1" src="cross.png"> <img v-if="case8 == 2" src="circle.png"></td>
+      <td v-on:click="ajouter(9)" class="case-jeu"><img v-if="case9 == 1" src="cross.png"> <img v-if="case9 == 2" src="circle.png"></td>
+    </tr>
+  </tbody></table>
+  </div>
+  <div class="score">
+    <h1>Score</h1>
+    <p>Joueur croix : {{scorej1}}</p>
+    <p>Joueur rond : {{scorej2}}</p>
+    <p>Match nul : {{matchNul}}</p>
+  </div>
+  <div class="reset"><span @click="resetPartie">Recommencer la partie</span></div>
+    </section>
+  </div>
+<script type="text/javascript" src="app.js"></script>
+</body>
+
+<style>
+  .case-jeu{
+    height:64px !important;
+    width:64px !important;
+    padding:0;
+  }
+
+  .case-jeu img {
+    height:64px !important;
+    width:64px !important;
+    padding:0;
+  }
+  </style>
+</html>
